@@ -6,7 +6,7 @@ import ShowTODO from './Component/ShowTODO'
 function App() {
   return (
     <div className="App">
-<h1 class="blue">TODO Application</h1>
+<h1 className="blue">TODO Application</h1>
 <AddToDo/>
 <ShowTODO/>
     </div>

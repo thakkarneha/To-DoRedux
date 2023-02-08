@@ -5,11 +5,11 @@ import { Button } from 'react-bootstrap';
 function ShowTODO() {
   return (
     <>
-    <h1>Show:</h1>
-    <Button variant="primary">ALL</Button>
-    <Button>Active</Button>
-    <Button >Completed</Button>
-
+    <div className="container">
+    <span>Show:</span> <Button variant="primary">ALL</Button>
+    <Button variant="">Active</Button>
+    <Button variant="">Completed</Button>
+</div>
 
 
     </>
