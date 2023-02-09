@@ -1,17 +1,21 @@
 import React,{useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { addToDo } from '../Actions/action';
 
 
 function AddToDo() {
   const [data,setData]=useState({item:""});
+  const dispatch=useDispatch();
   const handelChange=(e)=>{
     setData({...data,[e.target.name]:e.target.value})
   }
   const handelSubmit=(e)=>{
 e.preventDefault();
-console.log(data)
-  }
+dispatch(addToDo(data.item)) 
+setData("")
+}
   return (
     <>
 <div className='container' >
@@ -21,6 +25,7 @@ console.log(data)
 </form>
 </div>
 </>
+
  )
 }
 
