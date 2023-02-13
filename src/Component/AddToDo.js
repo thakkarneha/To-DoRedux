@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addToDo } from '../Actions/action';
 
 
+
 function AddToDo() {
   const [data,setData]=useState({item:""});
   const dispatch=useDispatch();
@@ -14,7 +15,7 @@ function AddToDo() {
   const handelSubmit=(e)=>{
 e.preventDefault();
 dispatch(addToDo(data.item)) 
-setData("")
+setData({item:""})
 }
   return (
     <>
