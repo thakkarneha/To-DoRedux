@@ -1,33 +1,46 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 import { useSelector,useDispatch } from 'react-redux';
 import { deleteTODo } from '../Actions/action';
 
 
 
 function ShowTODO() {
-  const disaptch= useDispatch();
+  const dispatch= useDispatch();
   const List= useSelector((state)=>state.toDoREducers.List)
-  console.log(List)
   return (
     <>
-    <div className="container">
-    <span>Show Items:</span> 
-    {List && List.map((item)=>{
+    <div className="table-responsive">
+      {List.length>0 ? <table className="table table-striped classicTable mx-auto w-auto">
+   <thead>
+   <tr><th>List</th>
+   <th>Action</th> 
+   </tr></thead>
+   <tbody>
+ { List.map((item)=>{
+      <span>Show Items:</span> 
            return (
-            <div key={item.id}>
-          <span>{item.data}</span>
-        <Button variant="success" onClick={()=>disaptch(deleteTODo())}>Delete</Button>
-        </div>
+            <tr key={item.id}>
+         <td><span>{item.data}</span></td>
+         <td><i
+          className="bi-trash red" onClick={()=>dispatch(deleteTODo(item.id))}></i>
+        </td> 
+        </tr>
+   ) })}
+        </tbody>
+       </table>
+     :null }
+     </div>
+       </>
 
-)
+
        
-    })}
-</div>
+ 
 
 
-    </>
+
+  
   )
 
 }

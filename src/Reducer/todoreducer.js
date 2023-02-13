@@ -18,6 +18,12 @@ return{
         }
     ]
 }
+case "DELETE_TODO": 
+const newList=state.List.filter((item)=>item.id !== action.id)
+return{
+    ...state,
+    List:newList
+}
 default: return state;
 }
 }

@@ -40,6 +40,16 @@
 .blue{
   color:blue;
 }
+.red{
+  color:red;
+}
+.classicTable{
+  border:#61dafb;
+  border-radius: 2px;
+  width:50% !important;
+  margin-bottom: 1rem !important;
+  text-align: center;
+}
 .formcontrol{
   margin:10px;
 }

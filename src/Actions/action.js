@@ -8,13 +8,10 @@ export const addToDo=(data)=>{
         }
     }
 }
-export const deleteTODo=()=>{
+export const deleteTODo=(id)=>{
     return {    
-        type:"DELETE_TODO"
-    }
-}
-export const removeTODO=()=>{
-    return {    
-        type:"REMOVE_TODO"
+        type:"DELETE_TODO",
+        id
+        
     }
 }
